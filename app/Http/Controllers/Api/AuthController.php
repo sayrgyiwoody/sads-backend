@@ -25,24 +25,23 @@ class AuthController extends Controller
         ]);
        }
 
-       public function Login(LoginRequest $request){
-        $request->validated($request->only(['email','password']));
-        if(!Auth::attempt($request->only(['email', 'password']))) {
-            return response()->json(['message'=>'Credential does not match'],401);
-        }
-        $user = User::where('email',$request->email)->first();
+       public function Login(Request $request){
+        logger($request->all());
+        // $request->validated($request->only(['email','password']));
+        // if(!Auth::attempt($request->only(['email', 'password']))) {
+        //     return response()->json(['message'=>'Credential does not match'],401);
+        // }
+        // $user = User::where('email',$request->email)->first();
         return response()->json([
-            'user'=>$user,
-            'token'=>$user->createToken("Api Token")->plainTextToken
+            'status' => 'success'
+            // 'user'=>$user,
+            // 'token'=>$user->createToken("Api Token")->plainTextToken
         ]);
        }
 
-       public function Logout(){
-        Auth::user()->currentAccessToken()->delete();
-        return response()->json([
-            'You have successfully logout to your account'
-        ]);
-       }
 
+       public function __invoke(){
+            //
+       }
 
 }

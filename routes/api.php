@@ -29,10 +29,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::controller(AuthController::class)->group(function(){
-    Route::match(['get','post'],'/register','Register');
-    Route::match(['get','post'],'/login','Login');
+
+
+Route::group(['middleware'=>['cors']],function(){
+    Route::controller(AuthController::class)->group(function(){
+        Route::match(['get','post'],'/register','Register');
+        Route::match(['get','post'],'/login','Login');
+    });
 });
+
 Route::middleware('auth:sanctum')->group(function(){
     Route::match(['get','match'],'/logout',[AuthController::class,'Logout']);
     Route::resource('/customer',ClientController::class);
