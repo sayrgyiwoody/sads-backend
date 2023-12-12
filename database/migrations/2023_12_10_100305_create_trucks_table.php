@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('trucks', function (Blueprint $table) {
             $table->id();
-            $table->String('driver_name');
-            $table->String('license');
-            $table->integer('capacity');
+            $table->integer('capacity'); // Change this line
+            $table->string('driver_name');
+            $table->string('license');
             $table->timestamps();
         });
+
     }
 
     /**
