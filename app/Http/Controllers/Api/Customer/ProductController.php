@@ -12,11 +12,7 @@ class ProductController extends Controller
     {
         $product_list = Product::when(request('searchKey'), function ($query, $searchKey) {
             return $query->where('product_name', 'LIKE', '%' . request('searchKey') . '%');
-<<<<<<< HEAD
-        })->get();
-=======
         })->paginate(6)->withQueryString();
->>>>>>> 3b66a04d4cff07c5551308e673ceb5f034e412f1
 
         return response()->json(
             [

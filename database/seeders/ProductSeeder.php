@@ -30,19 +30,5 @@ class ProductSeeder extends Seeder
                 'product_price' => rand(5000, 10000),
                 'bottles_per_box' => rand(10, 300),
             ];
+            Product::insert($final_products);
         }
-<<<<<<< HEAD
-        Product::insert($final_products);
-=======
-        // Product::insert($final_products);
-
-        // $data = [
-        //     [
-        //         'driver_name'=>'Ko Aung Kyaw',
-        //     ]
-        // ]
->>>>>>> 3b66a04d4cff07c5551308e673ceb5f034e412f1
-
-    }
-
-}
