@@ -10,7 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
+<<<<<<< HEAD
     {
+=======
+{
+>>>>>>> 3b66a04d4cff07c5551308e673ceb5f034e412f1
         Schema::create('raws', function (Blueprint $table) {
             $table->id();
             $table->timestamps();

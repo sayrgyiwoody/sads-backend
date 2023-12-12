@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers\Api\Customer;
 
+<<<<<<< HEAD
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+=======
+use App\Http\Requests\clientPreorderRequest;
+use App\Models\PreorderItem;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\clientPreorderResource;
+>>>>>>> 3b66a04d4cff07c5551308e673ceb5f034e412f1
 
 class ClientPreorderController extends Controller
 {
