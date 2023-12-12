@@ -8,8 +8,10 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\Customer\ClientController;
 use App\Http\Controllers\Api\Customer\ClientPreorderController;
 use App\Http\Controllers\Api\Customer\ProductController;
+use App\Http\Controllers\api\raw\ProductRawController;
 use App\Http\Controllers\Api\Sales\SalePreorderController;
 use App\Http\Controllers\Api\status\PreOrderstatusController;
+use App\Http\Controllers\api\truck\OrderTruckController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,4 +48,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::resource('/salePreorder',SalePreorderController::class);
     Route::post('/getProduct',[ProductController::class,'getProduct']);
     Route::resource('/staus',PreOrderstatusController::class);
+    Route::resource('/product/raw',ProductRawController::class);
+    Route::resource('/order/truck',OrderTruckController::class);
 });

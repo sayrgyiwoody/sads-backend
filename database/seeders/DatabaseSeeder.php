@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $this->call([ProductSeeder::class]);
+        $this->call([ProductSeeder::class
+    ,TruckSeeder::class]);
 
         // $products = [
         //     'Burmese Bliss', 'Golden Sunshine Tea', 'Mango Tango Delight', 'Rangoon Rosewater Elixir', 'Emerald Green Chai', 'Citrus Fusion Fizz',
