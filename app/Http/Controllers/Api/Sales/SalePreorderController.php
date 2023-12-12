@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api\Sales;
-
 use App\Http\Requests\salePreorderRequest;
+use App\Http\Resources\salePreorderResource;
 use App\Models\Preorder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\salePreorderResource;
 
 class SalePreorderController extends Controller
 {
@@ -42,7 +41,7 @@ class SalePreorderController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Preorder $preorder){
-        return $this->isNotAuthorized($preorder) ? $this->isNostAuthorized($preorder) : $preorder->delete();
+        return $this->isNotAuthorized($preorder) ? $this->isNostAuthorized($preorderStatus) : $preorder->delete();
     }
 
     public function isNotAuthorized($preorder){

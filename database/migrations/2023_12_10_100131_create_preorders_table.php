@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('preorders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
+            $table->integer('customer_id');
             $table->integer('preorder_number')->unique();
             $table->String('status')->defalut('pending');
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->integer('user_id');
             $table->String('permit_status')->nullable();
             $table->timestamps();
         });

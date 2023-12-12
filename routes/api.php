@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\Customer\ClientController;
 use App\Http\Controllers\Api\Customer\ClientPreorderController;
 use App\Http\Controllers\Api\Customer\ProductController;
 use App\Http\Controllers\Api\Sales\SalePreorderController;
+use App\Http\Controllers\Api\status\PreOrderstatusController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,5 +40,5 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::resource('/customerPreorder',ClientPreorderController::class);
     Route::resource('/salePreorder',SalePreorderController::class);
     Route::post('/getProduct',[ProductController::class,'getProduct']);
+    Route::resource('/staus',PreOrderstatusController::class);
 });
-
