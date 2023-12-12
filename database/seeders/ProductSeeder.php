@@ -31,7 +31,13 @@ class ProductSeeder extends Seeder
                 'bottles_per_box' => rand(10, 300),
             ];
         }
-        Product::insert($final_products);
+        // Product::insert($final_products);
+
+        // $data = [
+        //     [
+        //         'driver_name'=>'Ko Aung Kyaw',
+        //     ]
+        // ]
 
     }
 
